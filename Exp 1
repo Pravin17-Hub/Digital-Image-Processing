@@ -1,0 +1,14 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+subplot(1,2,1);
+imshow(I);
+title("Original Color Image");
+
+subplot(1,2,2);
+imshow(grayImage);
+title("Grayscale Image");
