@@ -1,0 +1,21 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+saltPepperNoise = imnoise(grayImage,"salt & pepper");
+speckleNoise = imnoise(grayImage,"speckle");
+
+subplot(1,3,1);
+imshow(grayImage);
+title("Original Image");
+
+subplot(1,3,2);
+imshow(saltPepperNoise);
+title("Salt & Pepper Noise");
+
+subplot(1,3,3);
+imshow(speckleNoise);
+title("Speckle Noise");
