@@ -1,0 +1,15 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+binaryImage = imbinarize(grayImage);
+
+subplot(1,2,1);
+imshow(grayImage);
+title("Grayscale Image");
+
+subplot(1,2,2);
+imshow(binaryImage);
+title("Binary Image");
