@@ -1,0 +1,16 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+smoothImage = imgaussfilt(grayImage,2);
+
+subplot(1,2,1);
+imshow(grayImage);
+title("Original Image");
+
+subplot(1,2,2);
+imshow(smoothImage);
+title("Smoothed Image");
