@@ -1,0 +1,19 @@
+clc;
+clear;
+close all;
+
+p = [2,3];
+q = [6,7];
+
+euclidean = sqrt((q(1)-p(1))^2 + (q(2)-p(2))^2);
+cityBlock = abs(q(1)-p(1)) + abs(q(2)-p(2));
+chessboard = max(abs(q(1)-p(1)), abs(q(2)-p(2)));
+
+disp("Euclidean Distance:");
+disp(euclidean);
+
+disp("City Block Distance:");
+disp(cityBlock);
+
+disp("Chessboard Distance:");
+disp(chessboard);
