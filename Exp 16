@@ -1,0 +1,24 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+binaryImage = imbinarize(grayImage);
+
+se = strel("disk",3);
+
+openingImage = imopen(binaryImage,se);
+closingImage = imclose(binaryImage,se);
+
+subplot(1,3,1);
+imshow(binaryImage);
+title("Binary Image");
+
+subplot(1,3,2);
+imshow(openingImage);
+title("Opening");
+
+subplot(1,3,3);
+imshow(closingImage);
+title("Closing");
