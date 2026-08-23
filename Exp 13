@@ -1,0 +1,24 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+[cA,cH,cV,cD] = dwt2(grayImage,"haar");
+
+subplot(2,2,1);
+imshow(cA,[]);
+title("Approximation");
+
+subplot(2,2,2);
+imshow(cH,[]);
+title("Horizontal Detail");
+
+subplot(2,2,3);
+imshow(cV,[]);
+title("Vertical Detail");
+
+subplot(2,2,4);
+imshow(cD,[]);
+title("Diagonal Detail");
