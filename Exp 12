@@ -1,0 +1,21 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+noisyImage = imnoise(grayImage,"salt & pepper",0.05);
+filteredImage = medfilt2(noisyImage,[3 3]);
+
+subplot(1,3,1);
+imshow(grayImage);
+title("Original Image");
+
+subplot(1,3,2);
+imshow(noisyImage);
+title("Noisy Image");
+
+subplot(1,3,3);
+imshow(filteredImage);
+title("Median Filtered Image");
