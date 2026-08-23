@@ -1,0 +1,23 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+PSF = fspecial("gaussian",25,5);
+blurredImage = imfilter(grayImage,PSF,"conv","symmetric");
+
+deblurredImage = deconvlucy(blurredImage,PSF,5);
+
+subplot(1,3,1);
+imshow(grayImage);
+title("Original Image");
+
+subplot(1,3,2);
+imshow(blurredImage);
+title("Blurred Image");
+
+subplot(1,3,3);
+imshow(deblurredImage);
+title("Deblurred Image");
