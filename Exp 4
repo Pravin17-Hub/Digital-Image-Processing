@@ -1,0 +1,15 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+enhancedImage = imadjust(grayImage);
+
+subplot(1,2,1);
+imshow(grayImage);
+title("Original Image");
+
+subplot(1,2,2);
+imshow(enhancedImage);
+title("Contrast Enhanced Image");
