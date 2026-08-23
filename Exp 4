@@ -4,7 +4,7 @@ close all;
 
 I = imread("peppers.png");
 grayImage = rgb2gray(I);
-enhancedImage = imadjust(grayImage);
+enhancedImage = histeq(grayImage);
 
 subplot(1,2,1);
 imshow(grayImage);
