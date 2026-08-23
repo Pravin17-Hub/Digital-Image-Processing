@@ -1,0 +1,21 @@
+clc;
+clear;
+close all;
+
+I = imread("peppers.png");
+grayImage = rgb2gray(I);
+
+noisyImage = imnoise(grayImage,"gaussian",0,0.01);
+filteredImage = wiener2(noisyImage,[5 5]);
+
+subplot(1,3,1);
+imshow(grayImage);
+title("Original Image");
+
+subplot(1,3,2);
+imshow(noisyImage);
+title("Noisy Image");
+
+subplot(1,3,3);
+imshow(filteredImage);
+title("Wiener Filtered Image");
